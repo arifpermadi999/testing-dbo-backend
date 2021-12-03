@@ -1,0 +1,777 @@
+{
+	"info": {
+		"_postman_id": "7df8f116-fba0-45cb-a4c6-580bd030c72a",
+		"name": "API DBO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "arif permadi",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "arifpermadi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "arifpermadi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ON AUTH",
+			"item": [
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/customer?page=1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"customer"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "search",
+											"value": "abc update",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/customer/search",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"customer",
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "PT abc",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "ptabc@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "087854442020",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "bekasi",
+											"type": "text"
+										},
+										{
+											"key": "province",
+											"value": "jawa barat",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "17520",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "gramapuri",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/customer",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "PT abc update",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "ptabc@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0878544420202",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "bekasi",
+											"type": "text"
+										},
+										{
+											"key": "province",
+											"value": "jawa barat",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "17520",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "gramapuri",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/customer/1?_method=PUT",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"customer",
+										"1"
+									],
+									"query": [
+										{
+											"key": "_method",
+											"value": "PUT"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "detail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/customer/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"customer",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/customer/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"customer",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/product?page=1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"product"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "search",
+											"value": "beras",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/product/search",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"product",
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Beras",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "10000",
+											"type": "text"
+										},
+										{
+											"key": "unit",
+											"value": "KG",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "deskripsi beras",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/product",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Beras update",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "12000",
+											"type": "text"
+										},
+										{
+											"key": "unit",
+											"value": "KG",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "deskripsi beras",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/product/1?_method=PUT",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"product",
+										"1"
+									],
+									"query": [
+										{
+											"key": "_method",
+											"value": "PUT"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "detail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/product/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"product",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/product/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"product",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/order?page=1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"order"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "search",
+											"value": "INV202112030001",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/order/search",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"order",
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"order_date\": \"2021-12-03\",\r\n\t\"customer_id\": 1,\r\n    \"payment_method\": \"CASH\",\r\n    \"status\": \"1\",\r\n\t\"detail\": [{\r\n\t\t\"product_id\": 1,\r\n\t\t\"product_qty\": 1\r\n\t}]\r\n\r\n}"
+								},
+								"url": {
+									"raw": "{{host}}/order",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"order_date\": \"2021-12-03\",\r\n\t\"customer_id\": 1,\r\n    \"payment_method\": \"CASH\",\r\n    \"status\": \"0\",\r\n\t\"detail\": [{\r\n\t\t\"product_id\": 1,\r\n\t\t\"product_qty\": 1\r\n\t}]\r\n\r\n}"
+								},
+								"url": {
+									"raw": "{{host}}/order/1?_method=PUT",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"order",
+										"1"
+									],
+									"query": [
+										{
+											"key": "_method",
+											"value": "PUT"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "detail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/order/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"order",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/order/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"order",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "status : \n0 : unconfirmed \n1 : confirmed",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "User Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/user/detail",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/logout",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzODUxNjg1OSwiZXhwIjoxNjM4NTIwNDU5LCJuYmYiOjE2Mzg1MTY4NTksImp0aSI6ImFSYTRqSHd1RzJwT2JScUMiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.J-M90l61WTIzRPSkT2jd88AKUZJ_hu85Hyf0NCV-OUw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8080/api"
+		}
+	]
+}
