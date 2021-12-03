@@ -4,6 +4,18 @@ using laravel and docker
 
 ## Installation
 
+install composer in backend-dbo\src
+
+```bash
+composer install
+```
+
+rename .env.example to .env
+
+```bash
+.env.example to .env
+```
+
 run docker in backend-dbo
 
 ```bash
